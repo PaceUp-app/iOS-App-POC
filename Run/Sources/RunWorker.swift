@@ -5,6 +5,7 @@
 //  Created by Lucas Abijmil on 21/03/2025.
 //
 
+import Model
 
 public protocol RunWorker {
   func fetch() async throws -> Run

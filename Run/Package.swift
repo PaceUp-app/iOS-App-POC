@@ -7,5 +7,9 @@ let package = Package(
   name: "Run",
   platforms: [.iOS(.v17)],
   products: [.library(name: "Run", targets: ["Run"])],
-  targets: [.target(name: "Run"), .testTarget(name: "RunTests", dependencies: ["Run"])]
+  dependencies: [.package(name: "Model", path: "../Model")],
+  targets: [
+    .target(name: "Run", dependencies: [.product(name: "Model", package: "Model")]),
+    .testTarget(name: "RunTests", dependencies: ["Run"])
+  ]
 )

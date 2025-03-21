@@ -10,6 +10,7 @@
 		8D29E00D2D8D6D6900955FA9 /* Routing in Frameworks */ = {isa = PBXBuildFile; productRef = 8D29E00C2D8D6D6900955FA9 /* Routing */; };
 		8D6388312D8D7D1D00416925 /* Run in Frameworks */ = {isa = PBXBuildFile; productRef = 8D6388302D8D7D1D00416925 /* Run */; };
 		8D7549B92D8D703D004C541B /* Account in Frameworks */ = {isa = PBXBuildFile; productRef = 8D7549B82D8D703D004C541B /* Account */; };
+		8D7E12482D8D8226005179D4 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = 8D7E12472D8D8226005179D4 /* Model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 			files = (
 				8D6388312D8D7D1D00416925 /* Run in Frameworks */,
 				8D7549B92D8D703D004C541B /* Account in Frameworks */,
+				8D7E12482D8D8226005179D4 /* Model in Frameworks */,
 				8D29E00D2D8D6D6900955FA9 /* Routing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +126,7 @@
 				8D29E00C2D8D6D6900955FA9 /* Routing */,
 				8D7549B82D8D703D004C541B /* Account */,
 				8D6388302D8D7D1D00416925 /* Run */,
+				8D7E12472D8D8226005179D4 /* Model */,
 			);
 			productName = "PaceUp-POC";
 			productReference = 8D29DFDE2D8D60AF00955FA9 /* PaceUp-POC.app */;
@@ -211,6 +214,7 @@
 				8D29E00B2D8D6D6900955FA9 /* XCLocalSwiftPackageReference "Routing" */,
 				8D7549B72D8D703D004C541B /* XCLocalSwiftPackageReference "Account" */,
 				8D63882F2D8D7D1D00416925 /* XCLocalSwiftPackageReference "Run" */,
+				8D7E12462D8D8226005179D4 /* XCLocalSwiftPackageReference "Model" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8D29DFDF2D8D60AF00955FA9 /* Products */;
@@ -599,6 +603,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Account;
 		};
+		8D7E12462D8D8226005179D4 /* XCLocalSwiftPackageReference "Model" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Model;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -613,6 +621,10 @@
 		8D7549B82D8D703D004C541B /* Account */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Account;
+		};
+		8D7E12472D8D8226005179D4 /* Model */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Model;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+public struct Account: Identifiable {
+  public let id = UUID()
+  public let createdAt: Date = .now.addingTimeInterval(-24*60*60)
+  public let updatedAt: Date = .now
+  public let type: AccountType = .free
+
+  public init() {}
+}
+
+public enum AccountType {
+  case free
+  case premium
+}

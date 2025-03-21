@@ -5,7 +5,7 @@
 //  Created by Lucas Abijmil on 21/03/2025.
 //
 
-import Foundation
+import Model
 
 public protocol AccountService {
   func fetch() async throws -> Account
@@ -13,6 +13,6 @@ public protocol AccountService {
 
 public final class DefaultAccountService: AccountService {
   public func fetch() async throws -> Account {
-    return Account(type: .premium)
+    return Account()
   }
 }

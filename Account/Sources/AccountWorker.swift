@@ -5,6 +5,7 @@
 //  Created by Lucas Abijmil on 21/03/2025.
 //
 
+import Model
 
 public protocol AccountWorker {
   func fetch() async throws -> Account

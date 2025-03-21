@@ -12,4 +12,6 @@ public struct Run: Identifiable {
   public let distance: Measurement<UnitLength> = .init(value: 12, unit: .kilometers)
   public let startedAt: Date = .now.addingTimeInterval(-60*60)
   public let endedAt: Date = .now
+
+  public init() {}
 }
