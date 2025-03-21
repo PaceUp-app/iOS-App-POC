@@ -6,17 +6,35 @@
 //
 
 import SwiftUI
+import Routing
+import Model
 
 public struct RunView: View {
+  @Environment(Router.self) private var router
   @State private var viewModel = RunViewModel()
+  let run: Run
 
-  public init() {}
+  public init(run: Run) {
+    self.run = run
+  }
 
   public var body: some View {
-    Spacer()
-      .task {
-        await viewModel.fetch()
+    VStack(spacing: 12) {
+      Text("Run View")
+        .font(.title)
+      Button("Push to Account view") {
+        router.push(.account(Account()))
       }
+      Button("Push or pop to Account view") {
+        router.pushOrPopIfNeeded(.account(Account()))
+      }
+      Button("Pop to root view") {
+        router.popToRoot()
+      }
+    }
+    .task {
+      await viewModel.fetch()
+    }
   }
 }
 

@@ -14,12 +14,12 @@ extension View {
   func withPushRouter() -> some View {
     navigationDestination(for: PushDestination.self) { destination in
       switch destination {
-      case .account:
-        AccountView()
-      case .run:
-        RunView()
+      case .account(let account):
+        AccountView(account: account)
+      case .run(let run):
+        RunView(run: run)
       case .dummy:
-        Text("Dummy View")
+        DummyView()
       }
     }
   }
@@ -27,12 +27,12 @@ extension View {
   func withSheetRouter(destination: Binding<SheetDestination?>) -> some View {
     sheet(item: destination) { destination in
       switch destination {
-      case .account:
-        AccountView()
-      case .run:
-        RunView()
+      case .account(let account):
+        AccountView(account: account)
+      case .run(let run):
+        RunView(run: run)
       case .dummy:
-        Text("Dummy View")
+        DummyView()
       }
     }
   }
@@ -40,12 +40,12 @@ extension View {
   func withFullScreenCoverRouter(destination: Binding<FullScreenCoverDestination?>) -> some View {
     fullScreenCover(item: destination) { destination in
       switch destination {
-      case .account:
-        AccountView()
-      case .run:
-        RunView()
+      case .account(let account):
+        AccountView(account: account)
+      case .run(let run):
+        RunView(run: run)
       case .dummy:
-        Text("Dummy View")
+        DummyView()
       }
     }
   }

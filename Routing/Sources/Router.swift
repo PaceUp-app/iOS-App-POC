@@ -10,17 +10,17 @@ import Observation
 @MainActor
 @Observable
 public final class Router {
-  var path: [PushDestination] = []
-  var sheet: SheetDestination?
-  var fullScreenCover: FullScreenCoverDestination?
+  public var path: [PushDestination] = []
+  public var sheet: SheetDestination?
+  public var fullScreenCover: FullScreenCoverDestination?
 
   public init() {}
 
-  func push(_ destination: PushDestination) {
+  public func push(_ destination: PushDestination) {
     path.append(destination)
   }
 
-  func pushOrPopIfNeeded(_ destination: PushDestination) {
+  public func pushOrPopIfNeeded(_ destination: PushDestination) {
     if path.contains(destination) {
       path.removeAll(where: { $0 != destination })
     } else {
@@ -28,27 +28,27 @@ public final class Router {
     }
   }
 
-  func present(_ sheet: SheetDestination) {
+  public func present(_ sheet: SheetDestination) {
     self.sheet = sheet
   }
 
-  func cover(_ fullScreenCover: FullScreenCoverDestination) {
+  public func cover(_ fullScreenCover: FullScreenCoverDestination) {
     self.fullScreenCover = fullScreenCover
   }
 
-  func back() {
+  public func back() {
     path.popLast()
   }
 
-  func popToRoot() {
+  public func popToRoot() {
     path.removeAll()
   }
 
-  func closeSheet() {
+  public func closeSheet() {
     sheet = nil
   }
 
-  func closeCover() {
+  public func closeCover() {
     fullScreenCover = nil
   }
 }

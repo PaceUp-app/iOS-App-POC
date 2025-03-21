@@ -6,13 +6,69 @@
 //
 
 import SwiftUI
-import Run
 
 @main
 struct PaceUp_POCApp: App {
   var body: some Scene {
     WindowGroup {
-      RunView()
+      TestView()
+    }
+  }
+}
+
+import Routing
+import Model
+struct TestView: View {
+  @State private var router = Router()
+  @State private var account = Account()
+  @State private var run = Run()
+
+  var body: some View {
+    NavigationStack(path: $router.path) {
+      VStack(spacing: 12) {
+        Button("Push to Account view") {
+          router.push(.account(account))
+        }
+        Button("Push to Run view") {
+          router.push(.run(run))
+        }
+        Button("Push dummy View") {
+          router.push(.dummy)
+        }
+      }
+      .withPushRouter()
+    }
+    .environment(router)
+    .withSheetRouter(destination: $router.sheet)
+    .withFullScreenCoverRouter(destination: $router.fullScreenCover)
+  }
+}
+
+struct DummyView: View {
+  @Environment(Router.self) private var router
+
+  var body: some View {
+    VStack(spacing: 12) {
+      Text("Run View")
+        .font(.title)
+      Button("Push to Account view") {
+        router.push(.account(Account()))
+      }
+      Button("Push or pop to Account view") {
+        router.pushOrPopIfNeeded(.account(Account()))
+      }
+      Button("Push to Run view") {
+        router.push(.run(Run()))
+      }
+      Button("Push or pop to Run view") {
+        router.pushOrPopIfNeeded(.run(Run()))
+      }
+      Button("Push dummy View") {
+        router.push(.dummy)
+      }
+      Button("Pop to root view") {
+        router.popToRoot()
+      }
     }
   }
 }
