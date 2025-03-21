@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D29E00D2D8D6D6900955FA9 /* Routing in Frameworks */ = {isa = PBXBuildFile; productRef = 8D29E00C2D8D6D6900955FA9 /* Routing */; };
+		8D6388312D8D7D1D00416925 /* Run in Frameworks */ = {isa = PBXBuildFile; productRef = 8D6388302D8D7D1D00416925 /* Run */; };
 		8D7549B92D8D703D004C541B /* Account in Frameworks */ = {isa = PBXBuildFile; productRef = 8D7549B82D8D703D004C541B /* Account */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6388312D8D7D1D00416925 /* Run in Frameworks */,
 				8D7549B92D8D703D004C541B /* Account in Frameworks */,
 				8D29E00D2D8D6D6900955FA9 /* Routing in Frameworks */,
 			);
@@ -121,6 +123,7 @@
 			packageProductDependencies = (
 				8D29E00C2D8D6D6900955FA9 /* Routing */,
 				8D7549B82D8D703D004C541B /* Account */,
+				8D6388302D8D7D1D00416925 /* Run */,
 			);
 			productName = "PaceUp-POC";
 			productReference = 8D29DFDE2D8D60AF00955FA9 /* PaceUp-POC.app */;
@@ -207,6 +210,7 @@
 			packageReferences = (
 				8D29E00B2D8D6D6900955FA9 /* XCLocalSwiftPackageReference "Routing" */,
 				8D7549B72D8D703D004C541B /* XCLocalSwiftPackageReference "Account" */,
+				8D63882F2D8D7D1D00416925 /* XCLocalSwiftPackageReference "Run" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8D29DFDF2D8D60AF00955FA9 /* Products */;
@@ -587,6 +591,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Routing;
 		};
+		8D63882F2D8D7D1D00416925 /* XCLocalSwiftPackageReference "Run" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Run;
+		};
 		8D7549B72D8D703D004C541B /* XCLocalSwiftPackageReference "Account" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Account;
@@ -597,6 +605,10 @@
 		8D29E00C2D8D6D6900955FA9 /* Routing */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Routing;
+		};
+		8D6388302D8D7D1D00416925 /* Run */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Run;
 		};
 		8D7549B82D8D703D004C541B /* Account */ = {
 			isa = XCSwiftPackageProductDependency;
