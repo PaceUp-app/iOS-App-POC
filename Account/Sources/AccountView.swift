@@ -11,7 +11,7 @@ import Model
 
 public struct AccountView: View {
   @Environment(Router.self) private var router
-  @State private var viewModel = AccountViewModel()
+  @Environment(AccountViewModel.self) private var accountViewModel
   let account: Account
 
   public init(account: Account) {
@@ -33,7 +33,7 @@ public struct AccountView: View {
       }
     }
     .task {
-      await viewModel.fetch()
+      await accountViewModel.fetch()
     }
   }
 }
@@ -41,9 +41,11 @@ public struct AccountView: View {
 import Factory
 @Observable
 @MainActor
-final class AccountViewModel {
+public final class AccountViewModel {
   @ObservationIgnored
   @Injected(\.accountWorker) private var accountWorker
+
+  public init() {}
 
   func fetch() async {
     let account = try! await accountWorker.fetch()

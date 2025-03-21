@@ -11,7 +11,7 @@ import Model
 
 public struct RunView: View {
   @Environment(Router.self) private var router
-  @State private var viewModel = RunViewModel()
+  @Environment(RunViewModel.self) private var runViewModel
   let run: Run
 
   public init(run: Run) {
@@ -33,7 +33,7 @@ public struct RunView: View {
       }
     }
     .task {
-      await viewModel.fetch()
+      await runViewModel.fetch()
     }
   }
 }
@@ -41,9 +41,11 @@ public struct RunView: View {
 import Factory
 @Observable
 @MainActor
-final class RunViewModel {
+public final class RunViewModel {
   @ObservationIgnored
   @Injected(\.runWorker) private var runWorker
+
+  public init() {}
 
   func fetch() async {
     let run = try! await runWorker.fetch()

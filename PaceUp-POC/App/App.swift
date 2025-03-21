@@ -18,19 +18,21 @@ struct PaceUp_POCApp: App {
 
 import Routing
 import Model
+import Run
+import Account
 struct TestView: View {
   @State private var router = Router()
-  @State private var account = Account()
-  @State private var run = Run()
+  @State private var accountViewModel = AccountViewModel()
+  @State private var runViewModel = RunViewModel()
 
   var body: some View {
     NavigationStack(path: $router.path) {
       VStack(spacing: 12) {
         Button("Push to Account view") {
-          router.push(.account(account))
+          router.push(.account(Account()))
         }
         Button("Push to Run view") {
-          router.push(.run(run))
+          router.push(.run(Run()))
         }
         Button("Push dummy View") {
           router.push(.dummy)
@@ -38,9 +40,11 @@ struct TestView: View {
       }
       .withPushRouter()
     }
-    .environment(router)
     .withSheetRouter(destination: $router.sheet)
     .withFullScreenCoverRouter(destination: $router.fullScreenCover)
+    .environment(router)
+    .environment(accountViewModel)
+    .environment(runViewModel)
   }
 }
 
