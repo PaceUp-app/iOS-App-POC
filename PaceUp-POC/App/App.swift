@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Run
 
 @main
 struct PaceUp_POCApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      RunView()
     }
   }
 }

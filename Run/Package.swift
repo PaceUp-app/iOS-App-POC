@@ -7,9 +7,20 @@ let package = Package(
   name: "Run",
   platforms: [.iOS(.v17)],
   products: [.library(name: "Run", targets: ["Run"])],
-  dependencies: [.package(name: "Model", path: "../Model"), .package(name: "Core", path: "../Core")],
+  dependencies: [
+    .package(name: "Model", path: "../Model"),
+    .package(name: "Core", path: "../Core"),
+    .package(url: "https://github.com/hmlongco/Factory", from: "2.4.3")
+  ],
   targets: [
-    .target(name: "Run", dependencies: [.product(name: "Model", package: "Model"), .product(name: "Core", package: "Core")]),
+    .target(
+      name: "Run",
+      dependencies: [
+        .product(name: "Model", package: "Model"),
+        .product(name: "Core", package: "Core"),
+        .product(name: "Factory", package: "Factory")
+      ]
+    ),
     .testTarget(name: "RunTests", dependencies: ["Run"])
   ]
 )

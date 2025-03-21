@@ -10,17 +10,8 @@ import Core
 import Run
 import Account
 
-extension Container {
-  var runService: Factory<RunService> {
-    self { DefaultRunService() }
-  }
-  var accountService: Factory<AccountService> {
-    self { DefaultAccountService() }
-  }
-  var runWorker: Factory<RunWorker> {
-    self { DefaultRunWorker(runService: self.runService.resolve(), accountService: self.accountService.resolve()) }
-  }
-  var accountWorker: Factory<AccountWorker> {
-    self { DefaultAccountWorker(accountService: self.accountService.resolve(), runService: self.runService.resolve()) }
-  }
-}
+//extension Container: @retroactive AutoRegistering {
+//  public func autoRegister() {
+//    runWorker.register { DefaultRunWorker(runService: T##any RunService, accountService: T##any AccountService)}
+//  }
+//}

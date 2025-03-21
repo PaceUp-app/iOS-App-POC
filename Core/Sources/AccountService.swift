@@ -7,6 +7,6 @@
 
 import Model
 
-public protocol AccountService {
+public protocol AccountService: Sendable {
   func fetch() async throws -> Account
 }

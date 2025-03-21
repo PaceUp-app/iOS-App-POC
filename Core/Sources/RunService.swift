@@ -7,6 +7,6 @@
 
 import Model
 
-public protocol RunService {
+public protocol RunService: Sendable {
   func fetch() async throws -> Run
 }

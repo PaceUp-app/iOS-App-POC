@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Run: Identifiable, Hashable {
+public struct Run: Identifiable, Hashable, Sendable {
   public let id = UUID()
   public let distance: Measurement<UnitLength> = .init(value: 12, unit: .kilometers)
   public let startedAt: Date = .now.addingTimeInterval(-60*60)

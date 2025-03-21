@@ -8,15 +8,15 @@
 import Model
 import Core
 
-public protocol RunWorker {
+protocol RunWorker: Sendable {
   func fetch() async throws -> Run
 }
 
-public final class DefaultRunWorker: RunWorker {
+final class DefaultRunWorker: RunWorker {
   private let runService: RunService
   private let accountService: AccountService
 
-  public init(runService: RunService, accountService: AccountService) {
+  init(runService: RunService, accountService: AccountService) {
     self.runService = runService
     self.accountService = accountService
   }
