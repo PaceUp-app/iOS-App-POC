@@ -10,6 +10,7 @@ let package = Package(
   dependencies: [
     .package(name: "Model", path: "../Model"),
     .package(name: "Core", path: "../Core"),
+    .package(name: "Routing", path: "../Routing"),
     .package(url: "https://github.com/hmlongco/Factory", from: "2.4.3")
   ],
   targets: [
@@ -18,7 +19,8 @@ let package = Package(
       dependencies: [
         .product(name: "Model", package: "Model"),
         .product(name: "Core", package: "Core"),
-        .product(name: "Factory", package: "Factory")
+        .product(name: "Factory", package: "Factory"),
+        .product(name: "Routing", package: "Routing")
       ]
     ),
     .testTarget(name: "RunTests", dependencies: ["Run"])
