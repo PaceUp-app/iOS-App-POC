@@ -6,19 +6,22 @@
 //
 
 import Model
+import Core
 
 public protocol AccountWorker {
   func fetch() async throws -> Account
 }
 
 public final class DefaultAccountWorker: AccountWorker {
-  private let service: AccountService
+  private let accountService: AccountService
+  private let runService: RunService
 
-  init(service: AccountService) {
-    self.service = service
+  init(accountService: AccountService, runService: RunService) {
+    self.accountService = accountService
+    self.runService = runService
   }
 
   public func fetch() async throws -> Account {
-    return try await service.fetch()
+    return try await accountService.fetch()
   }
 }

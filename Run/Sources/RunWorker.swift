@@ -13,13 +13,15 @@ protocol RunWorker {
 }
 
 final class DefaultRunWorker: RunWorker {
-  private let service: RunService
+  private let runService: RunService
+  private let accountService: AccountService
 
-  init(service: RunService) {
-    self.service = service
+  init(runService: RunService, accountService: AccountService) {
+    self.runService = runService
+    self.accountService = accountService
   }
 
   public func fetch() async throws -> Run {
-    return try await service.fetch()
+    return try await runService.fetch()
   }
 }
