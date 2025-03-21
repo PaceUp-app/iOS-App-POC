@@ -9,6 +9,6 @@ import Foundation
 import Factory
 
 extension Container {
-  public var runService: Factory<RunService?> { self { nil } }
-  public var accountService: Factory<AccountService?> { self { nil } }
+  public var runService: Factory<RunService?> { promised() }
+  public var accountService: Factory<AccountService?> { promised() }
 }

@@ -21,7 +21,7 @@ final class DefaultAccountWorker: AccountWorker {
     self.runService = runService
   }
 
-  public func fetch() async throws -> Account {
+  func fetch() async throws -> Account {
     return try await accountService.fetch()
   }
 }
