@@ -21,6 +21,6 @@ extension Container {
     self { DefaultRunWorker(runService: self.runService.resolve(), accountService: self.accountService.resolve()) }
   }
   var accountWorker: Factory<AccountWorker> {
-    self { DefaultAccountWorker(accountService: self.accountService .resolve(), runService: self.runService.resolve()) }
+    self { DefaultAccountWorker(accountService: self.accountService.resolve(), runService: self.runService.resolve()) }
   }
 }
