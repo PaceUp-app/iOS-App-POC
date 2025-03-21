@@ -5,6 +5,9 @@
 //  Created by Lucas Abijmil on 21/03/2025.
 //
 
+import Model
+
 public enum PushDestination: Hashable {
-  case dummy
+  case account(Account)
+  case run(Run)
 }

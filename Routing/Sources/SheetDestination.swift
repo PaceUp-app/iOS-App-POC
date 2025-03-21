@@ -5,8 +5,11 @@
 //  Created by Lucas Abijmil on 21/03/2025.
 //
 
+import Model
+
 public enum SheetDestination: Hashable, Identifiable {
-  case dummy
+  case account(Account)
+  case run(Run)
 
   public var id: Self {
     return self

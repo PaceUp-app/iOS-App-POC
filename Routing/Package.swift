@@ -6,5 +6,9 @@ let package = Package(
   name: "Routing",
   platforms: [.iOS(.v17)],
   products: [.library(name: "Routing", targets: ["Routing"])],
-  targets: [.target(name: "Routing"), .testTarget(name: "RoutingTests", dependencies: ["Routing"])]
+  dependencies: [.package(name: "Model", path: "../Model")],
+  targets: [
+    .target(name: "Routing", dependencies: [.product(name: "Model", package: "Model")]),
+    .testTarget(name: "RoutingTests", dependencies: ["Routing"])
+  ]
 )
