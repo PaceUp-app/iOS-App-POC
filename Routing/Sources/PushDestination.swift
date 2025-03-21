@@ -10,4 +10,5 @@ import Model
 public enum PushDestination: Hashable {
   case account(Account)
   case run(Run)
+  case dummy
 }

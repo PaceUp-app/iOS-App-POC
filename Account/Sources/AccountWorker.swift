@@ -8,7 +8,7 @@
 import Model
 import Core
 
-protocol AccountWorker {
+protocol AccountWorker: Sendable {
   func fetch() async throws -> Account
 }
 

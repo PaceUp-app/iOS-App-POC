@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Account: Identifiable, Hashable {
+public struct Account: Identifiable, Hashable, Sendable {
   public let id = UUID()
   public let createdAt: Date = .now.addingTimeInterval(-24*60*60)
   public let updatedAt: Date = .now
@@ -16,7 +16,7 @@ public struct Account: Identifiable, Hashable {
   public init() {}
 }
 
-public enum AccountType {
+public enum AccountType: Sendable {
   case free
   case premium
 }

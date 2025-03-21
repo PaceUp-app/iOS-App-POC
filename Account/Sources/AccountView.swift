@@ -1,14 +1,14 @@
 //
 //  File.swift
-//  Run
+//  Account
 //
 //  Created by Lucas Abijmil on 21/03/2025.
 //
 
 import SwiftUI
 
-public struct RunView: View {
-  @State private var viewModel = RunViewModel()
+public struct AccountView: View {
+  @State private var viewModel = AccountViewModel()
 
   public init() {}
 
@@ -23,12 +23,12 @@ public struct RunView: View {
 import Factory
 @Observable
 @MainActor
-final class RunViewModel {
+final class AccountViewModel {
   @ObservationIgnored
-  @Injected(\.runWorker) private var runWorker
+  @Injected(\.accountWorker) private var accountWorker
 
   func fetch() async {
-    let run = try! await runWorker.fetch()
-    print(run)
+    let account = try! await accountWorker.fetch()
+    print(account)
   }
 }
