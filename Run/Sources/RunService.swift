@@ -8,7 +8,10 @@
 import Model
 import Core
 
-final class DefaultRunService: RunService {
+public final class DefaultRunService: RunService {
+
+  public init() {}
+
   public func fetch() async throws -> Run {
     return Run()
   }

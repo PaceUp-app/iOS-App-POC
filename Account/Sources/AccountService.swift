@@ -8,7 +8,10 @@
 import Model
 import Core
 
-final class DefaultAccountService: AccountService {
+public final class DefaultAccountService: AccountService {
+
+  public init() {}
+
   public func fetch() async throws -> Account {
     return Account()
   }

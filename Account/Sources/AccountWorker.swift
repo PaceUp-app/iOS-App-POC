@@ -16,7 +16,7 @@ public final class DefaultAccountWorker: AccountWorker {
   private let accountService: AccountService
   private let runService: RunService
 
-  init(accountService: AccountService, runService: RunService) {
+  public init(accountService: AccountService, runService: RunService) {
     self.accountService = accountService
     self.runService = runService
   }
