@@ -11,6 +11,7 @@
 		8D6388312D8D7D1D00416925 /* Run in Frameworks */ = {isa = PBXBuildFile; productRef = 8D6388302D8D7D1D00416925 /* Run */; };
 		8D7549B92D8D703D004C541B /* Account in Frameworks */ = {isa = PBXBuildFile; productRef = 8D7549B82D8D703D004C541B /* Account */; };
 		8D7E12482D8D8226005179D4 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = 8D7E12472D8D8226005179D4 /* Model */; };
+		8DF828B42D8D84EA003C909B /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8DF828B32D8D84EA003C909B /* Core */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 				8D6388312D8D7D1D00416925 /* Run in Frameworks */,
 				8D7549B92D8D703D004C541B /* Account in Frameworks */,
 				8D7E12482D8D8226005179D4 /* Model in Frameworks */,
+				8DF828B42D8D84EA003C909B /* Core in Frameworks */,
 				8D29E00D2D8D6D6900955FA9 /* Routing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +129,7 @@
 				8D7549B82D8D703D004C541B /* Account */,
 				8D6388302D8D7D1D00416925 /* Run */,
 				8D7E12472D8D8226005179D4 /* Model */,
+				8DF828B32D8D84EA003C909B /* Core */,
 			);
 			productName = "PaceUp-POC";
 			productReference = 8D29DFDE2D8D60AF00955FA9 /* PaceUp-POC.app */;
@@ -215,6 +218,7 @@
 				8D7549B72D8D703D004C541B /* XCLocalSwiftPackageReference "Account" */,
 				8D63882F2D8D7D1D00416925 /* XCLocalSwiftPackageReference "Run" */,
 				8D7E12462D8D8226005179D4 /* XCLocalSwiftPackageReference "Model" */,
+				8DF828B22D8D84EA003C909B /* XCLocalSwiftPackageReference "Core" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8D29DFDF2D8D60AF00955FA9 /* Products */;
@@ -607,6 +611,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Model;
 		};
+		8DF828B22D8D84EA003C909B /* XCLocalSwiftPackageReference "Core" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Core;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -625,6 +633,10 @@
 		8D7E12472D8D8226005179D4 /* Model */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Model;
+		};
+		8DF828B32D8D84EA003C909B /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

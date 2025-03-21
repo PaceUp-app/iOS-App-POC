@@ -6,12 +6,9 @@
 //
 
 import Model
+import Core
 
-public protocol AccountService {
-  func fetch() async throws -> Account
-}
-
-public final class DefaultAccountService: AccountService {
+final class DefaultAccountService: AccountService {
   public func fetch() async throws -> Account {
     return Account()
   }

@@ -6,12 +6,9 @@
 //
 
 import Model
+import Core
 
-public protocol RunService {
-  func fetch() async throws -> Run
-}
-
-public final class DefaultRunService: RunService {
+final class DefaultRunService: RunService {
   public func fetch() async throws -> Run {
     return Run()
   }

@@ -6,12 +6,13 @@
 //
 
 import Model
+import Core
 
-public protocol RunWorker {
+protocol RunWorker {
   func fetch() async throws -> Run
 }
 
-public final class DefaultRunWorker: RunWorker {
+final class DefaultRunWorker: RunWorker {
   private let service: RunService
 
   init(service: RunService) {
