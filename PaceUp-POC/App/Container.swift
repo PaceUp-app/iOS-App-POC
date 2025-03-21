@@ -10,8 +10,9 @@ import Core
 import Run
 import Account
 
-//extension Container: @retroactive AutoRegistering {
-//  public func autoRegister() {
-//    runWorker.register { DefaultRunWorker(runService: T##any RunService, accountService: T##any AccountService)}
-//  }
-//}
+extension Container: @retroactive AutoRegistering {
+  public func autoRegister() {
+    runService.register { DefaultRunService() }
+    accountService.register { DefaultAccountService() }
+  }
+}

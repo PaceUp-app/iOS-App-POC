@@ -36,13 +36,7 @@ import Factory
 import Core
 #warning("Solve this")
 extension Container {
-  var runService: Factory<RunService> {
-    self { DefaultRunService() }
-  }
-  var accountService: Factory<AccountService?> {
-    promised()
-  }
   var runWorker: Factory<RunWorker> {
-    self { DefaultRunWorker(runService: self.runService.resolve(), accountService: self.accountService.resolve()!)} // not ideal
+    self { DefaultRunWorker(runService: self.runService.resolve()!, accountService: self.accountService.resolve()!)} // not ideal
   }
 }

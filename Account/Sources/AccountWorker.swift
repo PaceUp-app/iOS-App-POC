@@ -8,11 +8,11 @@
 import Model
 import Core
 
-public protocol AccountWorker {
+protocol AccountWorker {
   func fetch() async throws -> Account
 }
 
-public final class DefaultAccountWorker: AccountWorker {
+final class DefaultAccountWorker: AccountWorker {
   private let accountService: AccountService
   private let runService: RunService
 
